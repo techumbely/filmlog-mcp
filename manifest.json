@@ -1,0 +1,42 @@
+{
+  "manifest_version": "0.3",
+  "name": "filmlog",
+  "display_name": "Filmlog",
+  "version": "1.0.4",
+  "description": "Ask about your Filmlog film diary, watchlist and challenges. Requires the Filmlog Mac app and Filmlog Plus.",
+  "long_description": "Starts the MCP server that ships inside the Filmlog Mac app, so an AI assistant can answer questions about your film diary, watchlist, challenges and statistics, and propose changes that you approve in Filmlog. Filmlog answers on this Mac. This extension contains no server of its own: Filmlog must be installed from the Mac App Store, and the MCP server is part of Filmlog Plus.",
+  "author": {
+    "name": "Simon Braun",
+    "url": "https://simonbraun.studio"
+  },
+  "homepage": "https://filmlog.cc",
+  "icon": "icon.png",
+  "license": "MIT",
+  "server": {
+    "type": "binary",
+    "entry_point": "server/filmlog-mcp.sh",
+    "mcp_config": {
+      "command": "/bin/sh",
+      "args": [
+        "${__dirname}/server/filmlog-mcp.sh",
+        "${user_config.filmlog_app}"
+      ]
+    }
+  },
+  "user_config": {
+    "filmlog_app": {
+      "type": "string",
+      "title": "Filmlog app location",
+      "description": "Change this only if Filmlog is not in the Applications folder.",
+      "default": "/Applications/Filmlog.app",
+      "required": false
+    }
+  },
+  "compatibility": {
+    "platforms": [
+      "darwin"
+    ]
+  },
+  "tools_generated": true,
+  "prompts_generated": true
+}
