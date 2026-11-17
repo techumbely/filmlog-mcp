@@ -12,8 +12,8 @@
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/techumbely/filmlog-mcp/releases/download/v1.0.4/filmlog.mcpb",
-      "fileSha256": "SHA256-OF-THE-RELEASED-FILE",
+      "identifier": "https://github.com/techumbely/filmlog-mcp/releases/download/1.0.4/filmlog.mcpb",
+      "fileSha256": "7f013df071e29a164b7a9b2fa2571808292bd8a075749b388bef54097ab2a61d",
       "transport": {
         "type": "stdio"
       }
